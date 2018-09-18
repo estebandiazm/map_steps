@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,16 +20,48 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wVJ-Sq-5P8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lc-Qr-YgA">
+                                <rect key="frame" x="60" y="553" width="55" height="30"/>
+                                <state key="normal" title="Satellite"/>
+                                <connections>
+                                    <action selector="satelliteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqe-hW-Yey"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2S-vW-rL3">
+                                <rect key="frame" x="156" y="553" width="63" height="30"/>
+                                <state key="normal" title="Standard"/>
+                                <connections>
+                                    <action selector="mapStandardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b30-fD-Hd4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-6z-V34">
+                                <rect key="frame" x="269" y="553" width="46" height="30"/>
+                                <state key="normal" title="Hybrid"/>
+                                <connections>
+                                    <action selector="mapHybridAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r3H-ze-Qm9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wVJ-Sq-5P8" secondAttribute="trailing" id="SeV-UC-V8H"/>
-                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aMz-5Q-GWn"/>
-                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="haw-d8-2CL"/>
-                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jWS-0Z-k86"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c8h-6z-V34" secondAttribute="bottom" constant="40" id="1be-rk-6Dn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8h-6z-V34" secondAttribute="trailing" constant="60" id="6N2-FV-YlP"/>
+                            <constraint firstItem="1Lc-Qr-YgA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="AVY-pZ-ghy"/>
+                            <constraint firstItem="d2S-vW-rL3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FBa-YG-iGd"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GCY-Ig-5Iz"/>
+                            <constraint firstAttribute="bottom" secondItem="wVJ-Sq-5P8" secondAttribute="bottom" id="R79-O8-7tb"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T9g-hY-Q7z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d2S-vW-rL3" secondAttribute="bottom" constant="40" id="UCV-gV-sDX"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="X4t-g4-vQo"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZCR-yE-4NO"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lEE-b1-AdT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Lc-Qr-YgA" secondAttribute="bottom" constant="40" id="mxc-jW-SD0"/>
+                            <constraint firstItem="wVJ-Sq-5P8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="noD-bN-eLp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="map" destination="wVJ-Sq-5P8" id="lRe-Cy-y8j"/>
                     </connections>
